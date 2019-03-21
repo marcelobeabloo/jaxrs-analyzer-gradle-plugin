@@ -7,7 +7,6 @@ buildscript {
 
 plugins {
     id "maven-publish"
-    id "com.jfrog.bintray" version "1.8.3"
     id "groovy"
     id "com.gradle.plugin-publish" version "0.10.0"
     id "java-gradle-plugin"
@@ -19,11 +18,11 @@ repositories {
 }
 
 group = 'com.github.grimmjo'
-version = '0.3'
+version = '0.4'
 
 dependencies {
     compile gradleApi()
-    compile 'com.sebastian-daschner:jaxrs-analyzer:0.17'
+    compile 'com.sebastian-daschner:jaxrs-analyzer:0.18'
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
@@ -88,24 +87,6 @@ publishing {
     }
 }
 
-bintray {
-    user = System.getProperty('bintray.user')
-    key = System.getProperty('bintray.key')
-    publications = ['mavenPublication']
-
-    pkg {
-        repo = 'maven-releases'
-        name = 'jaxrs-analyzer-gradle-plugin'
-        userOrg = 'grimmjo'
-        licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/grimmjo/jaxrs-analyzer-gradle-plugin.git'
-        version {
-            name = project.version
-            desc = project.version
-            released  = new Date()
-        }
-    }
-}
 
 gradlePlugin {
     plugins {
