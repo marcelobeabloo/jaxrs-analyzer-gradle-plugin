@@ -1,4 +1,7 @@
 buildscript {
+    dependencies {
+        classpath 'com.sebastian-daschner:jaxrs-analyzer:0.19'
+    }
     repositories {
         mavenCentral()
         jcenter()
@@ -18,11 +21,13 @@ repositories {
 }
 
 group = 'com.github.grimmjo'
-version = '0.4'
+version = '0.5'
+
+sourceCompatibility = 1.6
 
 dependencies {
     compile gradleApi()
-    compile 'com.sebastian-daschner:jaxrs-analyzer:0.18'
+    compile 'com.sebastian-daschner:jaxrs-analyzer:0.19'
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {

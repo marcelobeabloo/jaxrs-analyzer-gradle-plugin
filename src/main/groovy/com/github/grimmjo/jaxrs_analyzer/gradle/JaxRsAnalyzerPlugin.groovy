@@ -23,7 +23,7 @@ class JaxRsAnalyzerPlugin implements Plugin<Project> {
                 it.inputDirectory = project.sourceSets.main.java.outputDir
             }
             dependencies {
-                delegate.compile("com.sebastian-daschner:jaxrs-analyzer:0.18")
+                delegate.compile("com.sebastian-daschner:jaxrs-analyzer:0.19")
             }
         }
     }

@@ -32,6 +32,7 @@ class JaxRsAnalyzerTask extends DefaultTask {
         JAXRSAnalyzer.Analysis analysis = new JAXRSAnalyzer.Analysis()
         analysis.projectName = project.name
         analysis.projectVersion = project.version
+        analysis.appendHeader = false
         project.configurations.compileClasspath.each {
             analysis.addClassPath(it.toPath())
         }
